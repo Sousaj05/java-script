@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-    background-color: rgb(83, 83, 222);
+    background-image: linear-gradient( to right, rgb(250, 168, 181), rgb(203, 199, 199));
     font: normal 15pt Arial;
 }
 
@@ -27,7 +27,7 @@ select#flista {
 }
 
 footer {
-    color: white;
+    color: rgb(2, 2, 52);
     text-align: center;
     font: italic;
 }
