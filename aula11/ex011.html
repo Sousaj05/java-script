@@ -6,25 +6,33 @@
     <title>Nacionalidade</title>
     <style>
         /*Exercicio de nacionalidade, nao consegui fazer, volte e resolva por mim, eu do futuro te amo lindo*/
+
+        body {
+            font: normal 15pt Arial;
+            background-color: pink;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.393);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Qual sua nacionalidade?</h1>
-    <h2>Digite onde voce nasceu</h2>
-    Teste de nacionalidade <input type="text" name="nac" id="txtnac">
-    <input type="button" value="Verificar" onclick="resultado()">
-    <div id="res">
+    <h1>Teste de nacionalidade</h1>
+    Em que pais voce nasceu? <input type="text" name="txtn" id="txtn"> <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
 
-    </div>
     <script>
-        function resultado() {
-            var nacio = window.document.getElementById('txtnac')
-            var res = window.document.getElementById('res')
-            var pais = 'Brasil'
-            if (pais == 'Brasil') {
-                res.innerHTML = `<p>Voce e brasileiro</p>`
-            } else  {
-                res.innerHTML = `<p>Voce e estrageiro</p>`
+        function verificar() {
+            var txtn = document.getElementById('txtn')
+            var res = document.getElementById('res')
+            var pais = String(txtn.value)
+            if(pais == 'Brasil' || 'Sao Paulo') {
+                res.innerHTML = 'Voce e brasileiro'
+            } else {
+                res.innerHTML = 'Voce e estrangeiro'
             }
         }
     </script>
