@@ -1,31 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-b">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
         body {
             font: normal 15pt Arial;
-            background-color: darkgray;
         }
 
         h1 {
             text-align: center;
-        }
-
-        input {
-            border-radius: 8px;
-            border: none;
-            padding: 10px;
-            margin-left: 5px;
-        }
-
-        div {
-            margin-top: 15px;
-            margin-left: 10px;
-            color: rgb(4, 4, 56);
         }
     </style>
 </head>
@@ -33,23 +18,23 @@
     <h1>Somando valores</h1>
     <input type="number" name="txtn1" id="txtn1"> +
     <input type="number" name="txtn2" id="txtn2">
-    <input type="button" value="somar" onclick="somar()">
-    <div id ="res">Resultado</div>
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res">Resultado</div>
 
     <script>
-        function somar() {
-        let tn1 = document.getElementById('txtn1')
-        let tn2 = document.getElementById('txtn2')
-        let res = document.getElementById('res')
-        let n1 = Number(tn1.value)
-        let n2 = Number(tn2.value)
-        let s = n1 + n2
-        let media = (n1 + n2) / 2
+        function calcular() {
+            let tn1 = document.getElementById("txtn1")
+            let tn2 = document.getElementById('txtn2')
+            let res = document.getElementById('res')
+            let n1 = Number(tn1.value)
+            let n2 = Number(tn2.value)
+            let s = n1 + n2
+            let m = (n1 + n2) / 2
 
-        res.innerHTML = `A soma entre ${n1} e ${n2} e igual a ${s} <br>
-        E a media e igual a <strong> ${media} </strong>`
-        
- }
+            res.innerHTML = `A soma de ${n1} com ${n2} e igual a <strong> ${s} </strong> <br>`
+
+            res.innerHTML += `E a media de ${s} e igual a ${m}`
+        }
     </script>
 </body>
 </html>

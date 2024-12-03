@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste de nacionalidade</h1>
+    Em que pais voce nasceu? <input type="text" name="txtp" id="txtp">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            let tnp = document.getElementById('txtp')
+            let res = document.getElementById('res')
+            let p = String(tnp.value)
+            res.innerHTML = `Voce nasceu no ${p} <br>`
+            if (p == 'brasil') {
+                res.innerHTML += `Entao voce e brasileiro`
+            } else if (p == 'Brasil') {
+                res.innerHTML += `Entao voce e brasileiro`
+            } else {
+                res.innerHTML += `Entao voce e estrangeiro`
+            }
+        }
+    </script>
+</body>
+</html>
