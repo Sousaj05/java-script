@@ -8,6 +8,8 @@ body {
 
 header {
     text-align: center;
+    color: white;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.307);
 }
 
 section {
@@ -21,9 +23,15 @@ section {
 
 div#msg {
     text-align: center;
-    padding: 13px;
+    padding-top: 20px;
+}
+
+div#foto {
+    text-align: center;
 }
 
 footer {
     text-align: center;
+    color: white;
+    font: italic;
 }
