@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Natal Interativo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1d1d1d;
+            color: white;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 4em;
+            margin-top: 20%;
+            animation: fadeIn 2s ease-in-out;
+            text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.201);
+        }
+
+        #snow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff;
+            font-size: 24px;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fall {
+            0% { top: -10px; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        .button {
+            background-color: #ff4b5c;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .button:hover {
+            background-color: #ff2f3f;
+        }
+
+        .message {
+            display: none;
+            font-size: 1.5em;
+            background-color: white;
+            color: red;
+            width: 400px;
+            margin: auto;
+            margin-top: 30px;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Feliz Natal!</h1>
+
+    <div id="snow"></div>
+
+    <button class="button" onclick="mostrarMensagem()">Clique para uma surpresa!</button>
+
+    <div class="message" id="message">
+        <p>🎄 Feliz Natal Rhanna 🎄</p>
+    </div>
+
+    <script>
+        // Gerar flocos de neve
+        function gerarNeve() {
+            const snowContainer = document.getElementById("snow");
+            const snowflakeCount = 100;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement("div");
+                snowflake.textContent = "❄️";
+                snowflake.classList.add("snowflake");
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // duração aleatória da queda
+                snowflake.style.animationDelay = `${Math.random() * 5}s`; // delay aleatório
+                snowContainer.appendChild(snowflake);
+            }
+        }
+
+        // Exibir mensagem ao clicar
+        function mostrarMensagem() {
+            document.getElementById("message").style.display = "block";
+        }
+
+        // Gerar neve ao carregar a página
+        gerarNeve();
+    </script>
+
+</body>
+</html>

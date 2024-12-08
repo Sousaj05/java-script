@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papai Noel Feliz Natal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .mensagem {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff0000;
+            opacity: 0;
+            animation: aparecer 3s ease-out forwards, deslizar 5s ease-in-out infinite;
+        }
+
+        @keyframes aparecer {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes deslizar {
+            0% {
+                transform: translateY(-100px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100px);
+            }
+        }
+
+        .papai-noel {
+            font-size: 5em;
+            margin-bottom: 20px;
+            color: #ff6347;
+            opacity: 0;
+            animation: aparecer 2s ease-out forwards;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="papai-noel">🎅</div>
+    <div class="mensagem">Feliz Natal!</div>
+
+    <script>
+        // Função para dar "bom dia" com animação
+        document.addEventListener("DOMContentLoaded", function() {
+            const mensagem = document.querySelector(".mensagem");
+            mensagem.style.animation = "aparecer 2s ease-out forwards";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação do Papai Noel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .papai-noel {
+            width: 150px;
+            height: 150px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Santa_Claus.png');
+            background-size: cover;
+            position: absolute;
+            animation: pulo 3s ease-in-out infinite;
+        }
+
+        .mensagem {
+            font-size: 40px;
+            color: #ff0000;
+            font-weight: bold;
+            position: absolute;
+            bottom: -60px;
+            animation: mensagem 3s ease-in-out infinite;
+        }
+
+        @keyframes pulo {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes mensagem {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            50% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="papai-noel"></div>
+        <div class="mensagem">Feliz Natal!</div>
+    </div>
+    <script>
+        // O script pode ser expandido para incluir mais interações
+    </script>
+</body>
+</html>
