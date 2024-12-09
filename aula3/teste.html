@@ -28,14 +28,18 @@
             right: 0;
             bottom: 0;
             pointer-events: none;
+            display: none; /* Inicialmente a neve não é exibida */
         }
 
         .snowflake {
             position: absolute;
             top: -10px;
-            color: #fff;
-            font-size: 24px;
+            width: 5px; /* Tamanho do ponto */
+            height: 5px; /* Tamanho do ponto */
+            background-color: #fff; /* Cor branca para o ponto */
+            border-radius: 50%; /* Tornar o ponto redondo */
             animation: fall 10s linear infinite;
+            opacity: 0.8;
         }
 
         @keyframes fadeIn {
@@ -45,7 +49,7 @@
 
         @keyframes fall {
             0% { top: -10px; opacity: 1; }
-            100% { top: 100%; opacity: 0; }
+            100% { top: 100vh; opacity: 0; }
         }
 
         .button {
@@ -89,36 +93,37 @@
 
     <div id="snow"></div>
 
-    <button class="button" onclick="mostrarMensagem()">Clique para uma surpresa!</button>
+    <button class="button" onclick="mostrarNeve()">Clique para uma surpresa!</button>
 
     <div class="message" id="message">
         <p>🎄 Feliz Natal Rhanna 🎄</p>
     </div>
 
     <script>
-        // Gerar flocos de neve
+        // Gerar neve como pontos brancos
         function gerarNeve() {
             const snowContainer = document.getElementById("snow");
-            const snowflakeCount = 100;
+            const snowflakeCount = 200;  // Número de pontos de neve
             
             for (let i = 0; i < snowflakeCount; i++) {
                 const snowflake = document.createElement("div");
-                snowflake.textContent = "❄️";
                 snowflake.classList.add("snowflake");
-                snowflake.style.left = `${Math.random() * 100}vw`;
-                snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // duração aleatória da queda
-                snowflake.style.animationDelay = `${Math.random() * 5}s`; // delay aleatório
+                snowflake.style.left = `${Math.random() * 100}vw`; // Posição horizontal aleatória
+                snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Duração aleatória da queda
+                snowflake.style.animationDelay = `${Math.random() * 5}s`; // Delay aleatório
+                snowflake.style.opacity = Math.random() * 0.5 + 0.5; // Opacidade aleatória para variação
                 snowContainer.appendChild(snowflake);
             }
         }
 
-        // Exibir mensagem ao clicar
-        function mostrarMensagem() {
-            document.getElementById("message").style.display = "block";
-        }
+        // Exibir neve quando clicar no botão
+        function mostrarNeve() {
+            const snowContainer = document.getElementById("snow");
+            snowContainer.style.display = "block"; // Mostrar a neve
+            gerarNeve(); // Gerar os pontos de neve
 
-        // Gerar neve ao carregar a página
-        gerarNeve();
+            document.getElementById("message").style.display = "block"; // Exibir a mensagem
+        }
     </script>
 
 </body>
