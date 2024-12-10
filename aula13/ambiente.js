@@ -1,17 +1,18 @@
-var c = 1      /* Teste logico no final */
-do {
-    console.log(`Passo ${c}`)
-    c++
-}while (c <= 99)
-
-
-/* Teste logico no inico
 var c = 1
-while (c <= 99) {
+while(c <= 6) {
     console.log(`Passo ${c}`)
     c++
 }
-*/
+
+
+/*
+var c = 1
+do {
+    console.log(`Passo ${c}`)
+    c++
+} while(c <= 500) 
+ */
+
 
 
 /*
