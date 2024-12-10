@@ -99,6 +99,9 @@
         <p>🎄 Feliz Natal Rhanna 🎄</p>
     </div>
 
+    <!-- Adicionando a música de Natal -->
+    <audio id="audio" src="jingle-bell-rock.mp3" preload="auto"></audio>
+
     <script>
         // Gerar neve como pontos brancos
         function gerarNeve() {
@@ -116,13 +119,17 @@
             }
         }
 
-        // Exibir neve quando clicar no botão
+        // Exibir neve e tocar música quando clicar no botão
         function mostrarNeve() {
             const snowContainer = document.getElementById("snow");
             snowContainer.style.display = "block"; // Mostrar a neve
             gerarNeve(); // Gerar os pontos de neve
 
             document.getElementById("message").style.display = "block"; // Exibir a mensagem
+
+            // Tocar a música
+            const audio = document.getElementById("audio");
+            audio.play();
         }
     </script>
 
