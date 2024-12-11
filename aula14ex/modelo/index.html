@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Contador</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -12,14 +13,17 @@
     </header>
     <section>
         <div>
-
+            <p>Inicio: <input type="number" name="inicio" id="txti"></p>
+            <p>Fim: <input type="number" name="fim" id="txtf"></p>
+            <p>Passo: <input type="number" name="passo" id="txtp"></p>
+            <p><input type="button" value="Contar" onclick="contar()"></p>
         </div>
-        <div>
-
+        <div id="res">
+            <p>Preparando a contagem...</p>
         </div>
     </section>
     <footer>
-        <p></p>
+        <p>@jottazet</p>
     </footer>
 </body>
 </html>
