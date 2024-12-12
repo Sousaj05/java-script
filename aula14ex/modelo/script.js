@@ -1,29 +1,17 @@
-function contar() {
-  let ini = document.getElementById('txti')
-  let fim = document.getElementById("txtf")
-  let passo = document.getElementById('txtp')
-  let res = document.getElementById('res')
-  if(ini.value.lenght <= 0 || fim.value.lenght <= 0 || passo.value.lenght <= 0) {
-    res.innerHTML = "impossivel contar"
+function tabuada() {
+  let num = document.getElementById('txtn')
+  let tab = document.getElementById('seltab')
+  
+  if ( num.value.length == 0 ) {
+    window.alert('[ERRO] Verique os dados')
   } else {
-    res.innerHTML = 'Contando... <br>'
-    let i = Number(ini.value)
-    let f = Number(fim.value)
-    let p = Number(passo.value)
-    if(p <= 0) {
-      window.alert('PASSO INVALIDO! CONSIDERADO PASSO 1')
-      P = 1
-    } 
-    if(i < f) {
-      //Contagem crescente
-      for(let c = i ; c <= f ; c+=p) {
-        res.innerHTML += `${c} \u{1F449}`
-      }
-      } else {
-        //Contagem regressiva
-        for(let c = i ; c >= f ; c-=p) {
-          res.innerHTML += `${c} \u{1F449}`
-        }
-      }
+    let n = Number(num.value)
+    tab.innerHTML = ''
+    for( let c = 1 ; c <= 10 ; c++) {
+      let item = document.createElement('option')
+      item.text = `${n} x ${c} = ${n*c}`
+      item.value = `tab${c}`
+      tab.appendChild(item)
     }
   }
+}

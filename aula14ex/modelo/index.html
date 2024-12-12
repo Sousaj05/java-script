@@ -9,17 +9,17 @@
 </head>
 <body>
     <header>
-        <h1>Vamos contar</h1>
+        <h1>Tabuada</h1>
     </header>
     <section>
         <div>
-            <p>Inicio: <input type="number" name="inicio" id="txti"></p>
-            <p>Fim: <input type="number" name="fim" id="txtf"></p>
-            <p>Passo: <input type="number" name="passo" id="txtp"></p>
-            <p><input type="button" value="Contar" onclick="contar()"></p>
+            <p>Numero: <input type="number" name="num" id="txtn">
+            <input type="button" value="Gerar tabuada" onclick="tabuada()"></p>
         </div>
-        <div id="res">
-            <p>Preparando a contagem...</p>
+        <div id="container">
+            <select name="tabuada" id="seltab" size="10">
+               <option>Digite um numero acima</option>
+            </select>
         </div>
     </section>
     <footer>
