@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fogos de Artifício - I LOVE YOU</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1b1b1b;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .fireworks {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .firework {
+            position: absolute;
+            font-size: 30px;
+            color: white;
+            animation: explode 2s forwards;
+        }
+
+        .message {
+            position: absolute;
+            color: white;
+            font-size: 5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-color: #1b1b1b; }
+            50% { background-color: #ff6600; }
+            100% { background-color: #1b1b1b; }
+        }
+
+        body {
+            animation: backgroundAnimation 4s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">I LOVE YOU</div>
+    <div class="fireworks" id="fireworks"></div>
+
+    <script>
+        const message = "I LOVE YOU";
+        const positions = [
+            { x: 300, y: 200 }, { x: 400, y: 200 }, { x: 500, y: 200 },
+            { x: 600, y: 200 }, { x: 700, y: 200 }, { x: 800, y: 200 },
+            { x: 500, y: 250 }, { x: 600, y: 250 }, { x: 700, y: 250 }
+        ];
+
+        // Função para criar um fogo de artifício
+        function createFirework(x, y, letter) {
+            const firework = document.createElement('div');
+            firework.classList.add('firework');
+            firework.textContent = letter;
+            firework.style.left = `${x}px`;
+            firework.style.top = `${y}px`;
+
+            document.getElementById('fireworks').appendChild(firework);
+
+            // Animação do fogo de artifício
+            setTimeout(() => {
+                firework.style.left = `${x + Math.random() * 200 - 100}px`;
+                firework.style.top = `${y + Math.random() * 200 - 100}px`;
+                firework.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;  // Cor aleatória
+            }, 100);
+
+            // Remover o fogo de artifício após a animação
+            setTimeout(() => {
+                firework.remove();
+            }, 2000);
+        }
+
+        // Função para iniciar a animação de fogos de artifício com letras
+        function triggerFireworks() {
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < message.length) {
+                    const letter = message[index];
+                    const pos = positions[index % positions.length];
+                    createFirework(pos.x, pos.y, letter);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 300);
+        }
+
+        // Disparar os fogos de artifício após 1 segundo
+        setTimeout(triggerFireworks, 1000);
+    </script>
+</body>
+</html>
