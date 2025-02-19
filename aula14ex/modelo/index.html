@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabuada</title>
+    <title>Super Contador</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
-     <header>
-        <p>Tabuada</p>
-     </header>
-    <div id="container">
-        <p>Numero <input type="number" name="num" id="txtn">
-        <input type="button" value="Gerar tabuada" onclick="tabuada()"></p>
-
-        <select name="tabuada" id="seltab" size="10">
-            <option>Digite um numero acima</option>
-        </select>
-    </div>
+    <head> <h1>Vamos contar</h1> </head>
+    <section>
+        <div id="dados">
+            <p>Inicio: <input type="number" name="ini" id="txti"></p>
+            <p>Fim: <input type="number" name="fim" id="txtf"></p>
+            <p>Passo: <input type="number" name="passo" id="txtp"></p>
+            <input type="button" value="contar" onclick="contar()">
+        </div>
+        <div id="res">
+            Preparando a contagem...
+        </div>
+    </section>
     <footer>
-         <p>@jottawin</p>
+        <p>@jottawin</p>
     </footer>
 </body>
 </html>
